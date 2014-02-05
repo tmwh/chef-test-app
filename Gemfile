@@ -50,3 +50,6 @@ gem 'capistrano-rbenv', github: 'capistrano/rbenv'
 gem 'capistrano-rails', github: 'capistrano/rails'
 gem 'capistrano-bundler', github: 'capistrano/bundler'
 gem 'sshkit', github: 'leehambley/sshkit'
+gem 'j-cap-recipes', require: false, group: [:utils]
+gem 'j-cap-recipes', require: false, group: [:utils]
+gem 'j-cap-recipes', require: false, group: [:utils]

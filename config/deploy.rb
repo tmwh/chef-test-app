@@ -2,10 +2,10 @@ set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.1.0'
 
 #TODO: Check the application name
-set :application, 'chef-test'
+set :application, 'chef-test-app'
 
 #TODO: Replace with valid github url
-set :repo_url,    'GITHUB_REPO'
+set :repo_url, 'git@github.com:tmwh/chef-test-app.git'
 
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
@@ -25,6 +25,8 @@ set :keep_releases, 5
 set :bundle_without, %w{development test utils}.join(' ')
 
 set :git_tag_name, proc { Time.now.to_s.gsub(/[-\s\:\+]+/, '-') }
+
+set :ssh_options, { :forward_agent => true }
 
 before 'deploy:migrate', 'db:backup'
 after 'deploy:finishing', 'deploy:restart'
